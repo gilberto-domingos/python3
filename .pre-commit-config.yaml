@@ -1,0 +1,9 @@
+repos:
+  - repo: local
+    hooks:
+      - id: pre-commit-example
+        name: Example Pre-commit Hook
+        entry: ./path/to/your/pre-commit-script.sh
+        language: script
+        types: [file]
+
