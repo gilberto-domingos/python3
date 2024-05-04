@@ -1,0 +1,9 @@
+repos:
+-   repo: local
+    hooks:
+    -   id: pre_ticket
+        name: Pre Ticket
+        language: system
+        entry: pre_ticket.cli:main
+        args: ['--regex=(feature|bug|chore)/(?P<ticket>[0-9]+)-.*', '--format={ticket} - {message}']
+        stages: [commit-msg]

@@ -21,7 +21,7 @@ setup(
     version="1.0.0",
     license="MIT license",
     keywords="pre_ticket",
-    url="https://github.com/deployed/pre_ticket",
+    url="git@github.com/deployed/pre_ticket",
     packages=find_packages(include=["pre_ticket"]),
     include_package_data=True,
     entry_points={"console_scripts": ["pre_ticket = pre_ticket.cli:main"]},
