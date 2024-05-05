@@ -1,26 +1,46 @@
 #!/usr/bin/env python
-# -*- coding: utf-8 -*-
 
-import git
 import os
+import subprocess
+import re
+import random
+import string
 
-def get_ticket_number():
-    # Implemente a lógica para obter o número do ticket
-    ticket_number = "YOUR_TICKET_NUMBER"  # Substitua "YOUR_TICKET_NUMBER" pela lógica real
-    print("Número do ticket:", ticket_number)  # Adicione esta linha para imprimir o número do ticket
-    return ticket_number
+def generate_random_ticket_number():
+    # Gerar um número aleatório de 5 dígitos
+    return ''.join(random.choices(string.digits, k=5))
 
-def add_ticket_number_to_commit_message(repo):
-    message_file = os.path.join(repo.git_dir, 'COMMIT_EDITMSG')
-    with open(message_file, 'r') as f:
-        message = f.read()
+def main():
+    # Get the staged files list (files marked for commit)
+    staged_files = subprocess.check_output(["git", "diff", "--cached", "--name-only"]).decode("utf-8").splitlines()
 
-    ticket_number = get_ticket_number()
-    new_message = f"[issue #{ticket_number}] {message}"
+    # Check if any staged files contain a ticket number pattern
+    ticket_pattern = r"(ticket|issue|#)\s*\d+"  # Regular expression for common ticket number formats
+    has_ticket_number = any(line for line in staged_files if re.search(ticket_pattern, line, re.IGNORECASE))
 
-    with open(message_file, 'w') as f:
-        f.write(new_message)
-    print("Commit message with ticket number:", new_message)  # Adiciona esta linha para imprimir a nova mensagem de commit
+    # If no ticket number is found, generate a random ticket number
+    if not has_ticket_number:
+        random_ticket_number = generate_random_ticket_number()
+        print(f"No ticket number found in staged files. Adding a random ticket number: {random_ticket_number}")
 
-repo = git.Repo(search_parent_directories=True)
-add_ticket_number_to_commit_message(repo)
+        # Adicione o número do ticket aleatório à mensagem de commit
+        commit_message = f"Commit with random ticket number: #{random_ticket_number}"
+    else:
+        # Encontre o número do ticket no padrão e adicione à mensagem de commit
+        ticket_numbers = [re.search(ticket_pattern, line, re.IGNORECASE).group() for line in staged_files if re.search(ticket_pattern, line, re.IGNORECASE)]
+        commit_message = f"Commit with ticket number: {' '.join(ticket_numbers)}"
+
+    # Verificar se a variável de ambiente COMMIT_EDITMSG está definida antes de acessá-la
+    commit_editmsg_path = os.environ.get('COMMIT_EDITMSG')
+    if commit_editmsg_path:
+        # Escreva a mensagem de commit atualizada no arquivo COMMIT_EDITMSG
+        with open(commit_editmsg_path, 'w') as f:
+            f.write(commit_message)
+
+        # Continuar com o commit usando o comando git commit --no-verify para evitar loops infinitos de pré-commit
+        subprocess.call(["git", "commit", "--no-verify", "-F", commit_editmsg_path])
+    else:
+        print("Error: COMMIT_EDITMSG environment variable is not defined.")
+
+if __name__ == "__main__":
+    main()
