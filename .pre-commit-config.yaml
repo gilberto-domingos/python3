@@ -3,6 +3,6 @@ repos:
     hooks:
       - id: add-ticket-number
         name: Add Ticket Number
-        entry: python pre-commit.py
-        language: system
+        entry: ./pre-commit.py
+        language: python
         types: [text]
