@@ -1,3 +1,3 @@
 # hello asdf
-NAME = "gilbsSDdessdsddddrto-ssASdssdsdDFDsdsdfs"
+NAME = "gilbsSDdessdsssdsddddssd"
 print(NAME)
