@@ -1,9 +1,8 @@
 repos:
--   repo: local
+  - repo: local
     hooks:
-    -   id: pre_ticket
-        name: Pre Ticket
+      - id: add-ticket-number
+        name: Add Ticket Number
+        entry: python ./pre-commit-hook.py
         language: system
-        entry: pre_ticket.py
-        args: ['--regex=(feature|bug|chore)/(?P<ticket>[0-9]+)-.*', '--format={ticket} - {message}']
-        stages: [commit-msg]
+        types: [text]
