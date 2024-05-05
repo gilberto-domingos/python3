@@ -5,9 +5,11 @@ import git
 import os
 
 def get_ticket_number():
-    # Implementar lógica para obter o número do ticket
-    ticket_number = "YOUR_TICKET_NUMBER"  # Substitua "YOUR_TICKET_NUMBER" pela lógica real
-    print("Número do ticket:", ticket_number)  # Adicione esta linha para imprimir o número do ticket
+    # Implemente aqui a lógica para obter o número do ticket
+    # Por exemplo, se estiver armazenado localmente em um arquivo
+    # você pode ler o número do arquivo. Aqui, estamos apenas retornando um número fixo para demonstração.
+    ticket_number = "123"  # Substitua isso pela lógica real
+    print("Número do ticket:", ticket_number)  # Imprime o número do ticket para verificar
     return ticket_number
 
 def add_ticket_number_to_commit_message(repo):
