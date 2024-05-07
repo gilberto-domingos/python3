@@ -3,6 +3,6 @@ repos:
   hooks:
   - id: add-ticket-number
     name: Add ticket number to commit
-    entry: .git/hooks/pre-commit
+    entry: ./.git/hooks/pre-commit
     language: python
-    types: [shell]
+    files: .git/COMMIT_EDITMSG
