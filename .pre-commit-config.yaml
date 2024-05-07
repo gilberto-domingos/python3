@@ -3,6 +3,6 @@ repos:
   hooks:
   - id: add-ticket-number
     name: Add ticket number to commit
-    entry: ./.git/hooks/add_ticket_number.sh
+    entry: .git/hooks/add_ticket_number
     language: python
     types: [shell]
