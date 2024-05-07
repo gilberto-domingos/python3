@@ -5,4 +5,4 @@ repos:
     name: Add ticket number to commit
     entry: .git/hooks/add_ticket_number.sh
     language: python
-    types: [sh]
+    types: [shell]
