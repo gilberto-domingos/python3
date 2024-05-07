@@ -1,8 +1,8 @@
 repos:
-  - repo: local
-    hooks:
-      - id: save-commit-message
-        name: Save Commit Message
-        entry: python3 .git/hooks/pre-commit
-        language: system
-        types: [executable]
+- repo: local
+  hooks:
+  - id: add-ticket-number
+    name: Add ticket number to commit
+    entry: .git/hooks/add_ticket_number.sh
+    language: system
+    types: [python3]
