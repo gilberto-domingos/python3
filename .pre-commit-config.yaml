@@ -1,0 +1,7 @@
+repos:
+- repo: local
+  hooks:
+  - id: check-line-endings
+    name: Check for Windows line endings
+    entry: pre-commit
+    language: python

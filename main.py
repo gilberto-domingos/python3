@@ -1,0 +1,2 @@
+NAME = "gildbsdssesdfadsrdssdsdtsffoddddddfsd"
+print(NAME)
