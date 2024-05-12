@@ -1,5 +1,0 @@
-chmod +x ./check_line_endings.py
-ls -l check_line_endings.py
--rwxr-xr-x 1 domin 197615 520 May  7 13:43 check_line_endings.py
-
-

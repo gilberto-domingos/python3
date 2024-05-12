@@ -1,2 +1,0 @@
-NAME = "gildbsdssesdfadsrdssdsdtsffoddddddfsd"
-print(NAME)
