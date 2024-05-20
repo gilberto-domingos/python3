@@ -1,0 +1,16 @@
+BOT com Automação de tarefas
+
+Passos da execução do algoritmo :
+
+- Entrar na planilha
+- Copiar informação de um campo e colar no seu campo correspondente
+- Repetir esses passos para outros campos até preencher os campos daquela página
+- Clicar em próxima
+- Repetir os mesmos passos e ir para a próxima página(pág.k 2)
+- Repetir os mesmos passos e finalizar o cadastro daquele produto e clicar em concluir
+- Clicar em ok, para finalizar o processo
+- Clicar no ok mais uma vez na mensagem de confirmação de salvamento no banco de dados
+- Clicar em "adicionar mais um e repetir o processo até finalizar a planilha"
+
+# PyAutoGUI(automação de cliks e teclado)
+# Openpyxl (Leitura e automação de planilhas)
