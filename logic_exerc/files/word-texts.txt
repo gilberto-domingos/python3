@@ -1,0 +1,3 @@
+O mundo tem vários países.
+Cada país tem várias estados.
+Cada estado tem várias cidades.
