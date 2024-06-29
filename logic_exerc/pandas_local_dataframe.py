@@ -21,4 +21,4 @@ print(df.loc[["p2"], ["cliente"]])
 print("--------- find Column by named indexes loc number ----------")
 print(df.iloc[0:2][["idade"]])
 
-print(df.loc[0:1, ["idade"]])
+# print(df.loc[0:1, ["idade"]])
