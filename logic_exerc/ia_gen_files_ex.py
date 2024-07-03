@@ -1,25 +1,34 @@
-import pandas as pd
 import random
 from datetime import datetime, timedelta
 
+import pandas_local_dataframe as pd
+
 # Fields
-produtos_base = ['Notebook', 'Smartphone', 'Cadeira', 'Mesa', 'Fone de Ouvido', 'Monitor', 'Impressora', 'Teclado', 'Mouse', 'Câmera']
-adjetivos = ['Excelente', 'Novo', 'Econômico', 'Compacto', 'Avançado', 'Confortável', 'Moderno', 'Portátil', 'Durável', 'Elegante']
+produtos_base = ['Notebook', 'Smartphone', 'Cadeira', 'Mesa', 'Fone de Ouvido', 'Monitor', 'Impressora', 'Teclado',
+                 'Mouse', 'Câmera']
+adjetivos = ['Excelente', 'Novo', 'Econômico', 'Compacto', 'Avançado', 'Confortável', 'Moderno', 'Portátil', 'Durável',
+             'Elegante']
 categorias_base = ['XS', 'XSS', 'XD', 'XDD', 'XF', 'XFF', 'XT', 'XTT', 'XY', 'XYY']
-fabricantes_base = ['TechCorp', 'HomeFurnish', 'GadgetWorld', 'OfficeStuff', 'FashionLine', 'ToyKingdom', 'ToolMaster', 'SportGear', 'KitchenPro', 'AutoParts']
+fabricantes_base = ['TechCorp', 'HomeFurnish', 'GadgetWorld', 'OfficeStuff', 'FashionLine', 'ToyKingdom', 'ToolMaster',
+                    'SportGear', 'KitchenPro', 'AutoParts']
+
 
 # Function generate itens columns
 def gerar_nome_produto():
     return f'{random.choice(produtos_base)} {random.choice(adjetivos)}'
 
+
 def gerar_descricao():
     return f'{random.choice(produtos_base)} {random.choice(adjetivos)} de alta qualidade'
+
 
 def gerar_categoria():
     return random.choice(categorias_base)
 
+
 def gerar_fabricante():
     return random.choice(fabricantes_base)
+
 
 # Generate datas
 produtos = [gerar_nome_produto() for _ in range(1000)]

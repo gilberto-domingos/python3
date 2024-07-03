@@ -12,7 +12,7 @@ alcool = 0
 gasolina = 0
 diesel = 0
 
-#Códigos : 1.Álcool 2.Gasolina 3.Diesel 4.Fim
+# Códigos : 1.Álcool 2.Gasolina 3.Diesel 4.Fim
 
 while True:
     # Leitura do código de combustível
