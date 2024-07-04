@@ -10,5 +10,6 @@ df = pd.read_csv("files/sport-activity3.csv")
 # df['Duration'].plot(kind='hist', bins=3, rwidth=0.9)
 
 df.hist(column='Duration', range=[100,200], grid=False, rwidth=0.9, sharex=True)
+df.hist(column='Duration', range=[100,200], grid=False, rwidth=0.9, sharex=True)
 
 plt.show()
