@@ -11,3 +11,12 @@ df = pd.DataFrame(pedido)
 
 # Carregar a segunda linha do dataframe
 print(df.loc[1])
+
+# Impressão da coluna produto
+print(df.loc[:, 'produto'])
+
+# Imprimir as informações do dataframe
+df = pd.DataFrame(pedido)
+
+# Imprimir as informações do dataframe
+print(df.info())
