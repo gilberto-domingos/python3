@@ -1,4 +1,4 @@
-from django.contrib import admin
+from zdjango.contrib import admin
 from .models import Employee, position
 
 # Register your models here.

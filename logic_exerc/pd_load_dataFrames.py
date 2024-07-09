@@ -2,7 +2,7 @@
 import pandas as pd
 
 # 2. Carregar dados a partir de um arquivo CSV em um dataframe a partir dos dados disponível
-df = pd.read_csv('files/people-10000.csv')
+df = pd.read_csv('files/clients_reg.csv')
 
 # 3. Imprimir os 10 primeiros registros do dataframe df
 print(df.head(10))

@@ -63,6 +63,6 @@ data = {
 df = pd.DataFrame(data)
 
 # Save excel file
-file_path = 'files/produtos_atualizados.xlsx'
+file_path = 'files/products_updated.xlsx'
 df.to_excel(file_path, index=False)
 print(f'Arquivo salvo como {file_path}')

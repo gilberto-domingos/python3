@@ -1,4 +1,4 @@
-BOT com Automação de tarefas
+BOT com Automação de serviços
 
 Passos da execução do algoritmo :
 

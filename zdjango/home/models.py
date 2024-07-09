@@ -1,4 +1,4 @@
-from django.db import models
+from zdjango.db import models
 
 
 # Create your models here.

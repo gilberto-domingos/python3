@@ -1,0 +1,31 @@
+.title {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#proximo {
+    margin-top: 20px;
+    background-color: blue; color: white;
+}
+
+.cancel {
+    background-color: red;
+    color: white;
+}
+
+.back {
+    background-color: darkgray;
+}
+
+.form-label,
+.form-control {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
