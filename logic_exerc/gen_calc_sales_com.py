@@ -2,7 +2,7 @@ import pandas as pd
 from openpyxl import load_workbook
 
 # Abrir o arquivo Excel existente
-file_path = 'files/com_vendas.xlsx'
+file_path = 'files/_com_vendas_.xlsx'
 wb = load_workbook(file_path)
 ws = wb.active
 
@@ -22,6 +22,6 @@ for index, row in df.iterrows():
     ws[f'H{index + 2}'] = commission  # A coluna "Commission" é a 8ª coluna (H)
 
 # Salvar o novo arquivo Excel
-output_file_path = 'files/calc_com_vendas.xlsx'
+output_file_path = 'files/_calc_com_vendas_.xlsx'
 wb.save(output_file_path)
 print(f'File saved as {output_file_path}')

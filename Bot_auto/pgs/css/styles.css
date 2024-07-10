@@ -1,11 +1,30 @@
 .title {
     text-align: center;
     margin-top: 10px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+.send-title {
+    text-align: center;
+    color: #03c603;
+    margin-top: 150px;
+    margin-bottom: 250px;
+    text-shadow: 1px 1px 1px #000;
 }
 
 #proximo {
     margin-top: 20px;
     background-color: blue; color: white;
+}
+
+#enviar {
+    margin-top: 20px;
+    background-color: #03c603;
+    color: white;
+}
+
+#reg {
+ background-color: blue; color: white;
 }
 
 .cancel {

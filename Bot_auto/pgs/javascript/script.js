@@ -4,5 +4,5 @@ document.getElementById('proximo').addEventListener('click', function() {
             input.value = '';
         });
 
-        window.location.href = 'cad_pg2.pgs';
+        window.location.href = 'cad_pg2.html';
     });
