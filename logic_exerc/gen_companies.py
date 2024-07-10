@@ -11,6 +11,10 @@ def generate_company():
     suffixes = ['ME', 'EPP', 'GE']
     return f'{fake.company()} - {random.choice(suffixes)}'
 
+def generate_product_name():
+    product_names = ['Notebook', 'Smartphone', 'Cadeira', 'Mesa', 'Fone', 'Monitor', 'Impressora', 'Teclado', 'Mouse', 'Câmera']
+    return random.choice(product_names)
+
 def generate_cnpj():
     return fake.cnpj()
 
@@ -20,11 +24,21 @@ def generate_title():
 def generate_process_code():
     return f'P{random.randint(1000000000, 9999999999)}'
 
+def generate_product_code():
+    return f'P{random.randint(100000, 999999)}'
+
+def generate_weight_code():
+    return f'{random.randint(1, 9)},{random.randint(10, 99)}kg'
+
+def generate_size_code():
+    return f'{random.randint(1, 9)},{random.randint(10, 99)}mts'
+
 def generate_employee_code():
     return random.randint(1000, 9999)
 
 def generate_sale():
-    return f'R$ {round(random.uniform(100.0, 10000.0), 2)}'
+    sale_value = round(random.uniform(100.0, 10000.0), 2)
+    return f'R$ {str(sale_value).replace(".", ",")}'
 
 def generate_date():
     start_date = datetime(2020, 1, 1)
@@ -37,6 +51,12 @@ while len(companies) < 500:
     company = generate_company()
     if company not in companies:
         companies.append(company)
+
+product_names = []
+while len(product_names) < 500:
+    product = generate_product_name()
+    if product_names.count(product) < 50:  # Limit each product to appear at most 50 times
+        product_names.append(product)
 
 cnpjs = []
 while len(cnpjs) < 500:
@@ -56,11 +76,29 @@ while len(process_codes) < 500:
     if process_code not in process_codes:
         process_codes.append(process_code)
 
+product_codes = []
+while len(product_codes) < 500:
+    product_code = generate_product_code()
+    if product_code not in product_codes:
+        product_codes.append(product_code)
+
 employee_codes = []
 while len(employee_codes) < 500:
     employee_code = generate_employee_code()
     if employee_code not in employee_codes:
         employee_codes.append(employee_code)
+
+weight_codes = []
+while len(weight_codes) < 500:
+    weight_code = generate_weight_code()
+    if weight_code not in weight_codes:
+        weight_codes.append(weight_code)
+
+size_codes = []
+while len(size_codes) < 500:
+    size_code = generate_size_code()
+    if size_code not in size_codes:
+        size_codes.append(size_code)
 
 sales = []
 while len(sales) < 500:
@@ -80,6 +118,10 @@ data = {
     'CNPJ': cnpjs,
     'Título': titles,
     'Processo': process_codes,
+    'Produto': product_codes,
+    'Nome': product_names,
+    'Peso(Kg)': weight_codes,
+    'Tam': size_codes,
     'Funcionário': employee_codes,
     'Venda': sales,
     'Data': dates,
