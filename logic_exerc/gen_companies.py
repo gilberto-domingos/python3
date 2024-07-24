@@ -12,7 +12,7 @@ def generate_company():
     return f'{fake.company()} - {random.choice(suffixes)}'
 
 def generate_product_name():
-    product_names = ['Notebook', 'Smartphone', 'Cadeira', 'Mesa', 'Fone', 'Monitor', 'Impressora', 'Teclado', 'Mouse', 'Câmera']
+    product_names = ['bed(Q)', 'bed(I)', 'bed(C)', 'bed(E)', 'bed(Y)', 'bed(X)', 'bed(W)', 'bed(V)', 'bed(T)', 'bed(R)']
     return random.choice(product_names)
 
 def generate_cnpj():
@@ -38,7 +38,7 @@ def generate_employee_code():
 
 def generate_sale():
     sale_value = round(random.uniform(100.0, 10000.0), 2)
-    return f'R$ {str(sale_value).replace(".", ",")}'
+    return f'R$ {format(sale_value, ".2f").replace(".", ",")}'
 
 def generate_date():
     start_date = datetime(2020, 1, 1)
@@ -130,7 +130,21 @@ data = {
 
 df = pd.DataFrame(data)
 
+# Calculate and add commission
+def calculate_commission(sale_value):
+    # Remove "R$ " and replace "," with "."
+    sale_value = sale_value.replace("R$ ", "").replace(",", ".")
+    sale_value = float(sale_value)
+    commission = sale_value * 0.10
+    # Format commission as currency with two decimal places
+    return f'R$ {format(commission, ".2f").replace(".", ",")}'
+
+df['Comissão'] = df['Venda'].apply(calculate_commission)
+
+# Format 'Venda' column to ensure two decimal places
+df['Venda'] = df['Venda'].apply(lambda x: f'R$ {format(float(x.replace("R$ ", "").replace(",", ".")), ".2f").replace(".", ",")}')
+
 # Saving to an Excel file in the current directory
-file_path = 'files/com_sales.xlsx'
+file_path = 'files/com_vendas.xlsx'
 df.to_excel(file_path, index=False)
 print(f'File saved as {file_path}')
