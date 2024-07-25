@@ -1,3 +1,4 @@
+''' Implementação da RNA Perceptron para determinar a classe da flor iris,ajustar o mesmo algoritmo, para a execução do dataset Bancario. Fazer testes com valores diferentes das amostras treinadas. '''
 from sklearn import preprocessing # biblioteca para suporte ao pré-processamento
 from sklearn.model_selection import train_test_split # biblioteca para separação de amostras para treino e teste
 from sklearn.linear_model import Perceptron # biblioteca com funções para a execução da RNA Perceptron
@@ -6,7 +7,7 @@ from sklearn import metrics # biblioteca para obtenção de métricas para avali
 import matplotlib.pyplot as plt # biblioteca para plotar gráfico
 import numpy as np
 import pandas as pd
-import random # biblioteca aplicada na geração de números randômicos
+import random  # biblioteca aplicada na geração de números randômicos
 
 df = pd.read_csv("files/bancario.csv")
 
