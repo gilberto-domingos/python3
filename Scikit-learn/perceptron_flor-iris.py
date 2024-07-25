@@ -1,4 +1,4 @@
-''' Base de dados das flores de íris, arquivo irisMLP.csv - Implementação da RNA - Rede Neurais Artificiais Perceptron para determinar a classe da flor iris, veja imagem flor-iris.png '''
+''' Base de dados das flores de íris, arquivo irisMLP.csv - Implementação da RNA - Rede Neurais Artificiais Perceptron para determinar a classe da flor iris, veja imagem flores-iris.png '''
 from sklearn import preprocessing # biblioteca para suporte ao pré-processamento
 from sklearn.model_selection import train_test_split # biblioteca para separação de amostras para treino e teste
 from sklearn.linear_model import Perceptron # biblioteca com funções para a execução da RNA Perceptron
