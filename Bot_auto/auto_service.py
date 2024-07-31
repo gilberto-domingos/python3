@@ -30,18 +30,44 @@ for row in sheet_vendas.iter_rows(min_row=2):
 
     pyautogui.click(904, 665, duration=1)
     sleep(3)
+###
+    product = row[4].value
+    pyperclip.copy(product)
+    pyautogui.click(873,325, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
 
+    name = row[5].value
+    pyperclip.copy(name)
+    pyautogui.click(874,417, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
+
+    weight = row[6].value
+    pyperclip.copy(weight)
+    pyautogui.click(874,513, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
+
+    size = row[7].value
+    pyperclip.copy(size)
+    pyautogui.click(875,605, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
+
+    pyautogui.click(904, 665, duration=1)
+    sleep(3)
 
     #print(f"Copied process: {process}")
     #sleep(60)
 
 '''
+company = row[0].value
 cnpj = row[1].value
 title = row[2].value
 process = row[3].value36636803
+
+product = row[4].value
 name = row[5].value
 weight = row[6].value
 size = row[7].value
+
 employee = row[8].value
 sale = row[9].value
 date = row[10].value
