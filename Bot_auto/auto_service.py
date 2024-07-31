@@ -11,6 +11,10 @@ for row in sheet_vendas.iter_rows(min_row=2):
     pyperclip.copy(company)
     pyautogui.click(870,325, duration=1)
     pyautogui.hotkey('ctrl', 'v')
+    cnpj = row[1].value
+    pyperclip.copy(cnpj)
+
+
 
 '''
 cnpj = row[1].value
