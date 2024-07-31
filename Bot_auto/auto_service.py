@@ -2,27 +2,29 @@ import openpyxl
 import pyperclip
 import pyautogui
 
-
-# Carregar o workbook
 workbook = openpyxl.load_workbook('bot_files/com_vendas.xlsx')
 
 sheet_vendas = workbook['Sheet1']
 
 for row in sheet_vendas.iter_rows(min_row=2):
-  company = row[0].value
-  pyperclip.copy(company)
-  pyautogui.click(867,328)
-  cnpj = row[1].value
-  title = row[2].value
-  process = row[3].value
-  product = row[4].value
-  name = row[5].value
-  weight = row[6].value
-  size = row[7].value
-  employee = row[8].value
-  sale = row[9].value
-  date = row[10].value
-  commission = row[11].value
+    company = row[0].value
+    pyperclip.copy(company)
+    pyautogui.click(870,325, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
+
+'''
+cnpj = row[1].value
+title = row[2].value
+process = row[3].value
+product = row[4].value
+name = row[5].value
+weight = row[6].value
+size = row[7].value
+employee = row[8].value
+sale = row[9].value
+date = row[10].value
+commission = row[11].value
+'''
 
 '''
 sheet = workbook.active

@@ -1,3 +1,9 @@
+mouse info :
+ xauth add :0 . bb9a0b1e47c76009e4761b204a6dde0e
+
+source .venv/bin/activate python3
+
+
 BOT com Automação de serviços
 
 Passos da execução do algoritmo :
