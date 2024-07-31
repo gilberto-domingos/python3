@@ -1,8 +1,7 @@
-from datetime import time
-
 import openpyxl
 import pyperclip
 import pyautogui
+from time import sleep
 
 workbook = openpyxl.load_workbook('bot_files/com_vendas.xlsx')
 
@@ -11,27 +10,30 @@ sheet_vendas = workbook['Sheet1']
 for row in sheet_vendas.iter_rows(min_row=2):
     company = row[0].value
     pyperclip.copy(company)
-    pyautogui.click(870,325, duration=1)
+    pyautogui.click(870, 325, duration=1)
     pyautogui.hotkey('ctrl', 'v')
 
     cnpj = row[1].value
     pyperclip.copy(cnpj)
-    pyautogui.click(869,419, duration=1)
+    pyautogui.click(869, 419, duration=1)
     pyautogui.hotkey('ctrl', 'v')
 
     title = row[2].value
     pyperclip.copy(title)
-    pyautogui.click(871,513, duration=1)
+    pyautogui.click(871, 513, duration=1)
     pyautogui.hotkey('ctrl', 'v')
 
     process = row[3].value
     pyperclip.copy(process)
-    pyautogui.click(870,608, duration=1)
+    pyautogui.click(870, 608, duration=1)
     pyautogui.hotkey('ctrl', 'v')
-    print(f"Copied process: {process}")
-    time.sleep(0.5)
+
+    pyautogui.click(904, 665, duration=1)
+    sleep(3)
 
 
+    #print(f"Copied process: {process}")
+    #sleep(60)
 
 '''
 cnpj = row[1].value
