@@ -1,3 +1,5 @@
+from datetime import time
+
 import openpyxl
 import pyperclip
 import pyautogui
@@ -11,16 +13,30 @@ for row in sheet_vendas.iter_rows(min_row=2):
     pyperclip.copy(company)
     pyautogui.click(870,325, duration=1)
     pyautogui.hotkey('ctrl', 'v')
+
     cnpj = row[1].value
     pyperclip.copy(cnpj)
+    pyautogui.click(869,419, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
+
+    title = row[2].value
+    pyperclip.copy(title)
+    pyautogui.click(871,513, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
+
+    process = row[3].value
+    pyperclip.copy(process)
+    pyautogui.click(870,608, duration=1)
+    pyautogui.hotkey('ctrl', 'v')
+    print(f"Copied process: {process}")
+    time.sleep(0.5)
 
 
 
 '''
 cnpj = row[1].value
 title = row[2].value
-process = row[3].value
-product = row[4].value
+process = row[3].value36636803
 name = row[5].value
 weight = row[6].value
 size = row[7].value
