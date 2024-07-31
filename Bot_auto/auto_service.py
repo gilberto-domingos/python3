@@ -29,7 +29,7 @@ for row in sheet_vendas.iter_rows(min_row=2):
     pyautogui.hotkey('ctrl', 'v')
 
     pyautogui.click(904, 665, duration=1)
-    sleep(3)
+    #sleep(1)
 ###
     product = row[4].value
     pyperclip.copy(product)
@@ -52,10 +52,10 @@ for row in sheet_vendas.iter_rows(min_row=2):
     pyautogui.hotkey('ctrl', 'v')
 
     pyautogui.click(904, 665, duration=1)
-    sleep(3)
+    #sleep(1)
 
-    #print(f"Copied process: {process}")
-    #sleep(60)
+    print(f"Copied process: {process}")
+    sleep(60)
 
 '''
 company = row[0].value
