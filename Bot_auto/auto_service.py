@@ -1,7 +1,7 @@
 import openpyxl
 import pyperclip
 import pyautogui
-from time import sleep
+#from time import sleep
 
 workbook = openpyxl.load_workbook('bot_files/com_vendas.xlsx')
 
@@ -28,8 +28,8 @@ for row in sheet_vendas.iter_rows(min_row=2):
     pyautogui.click(870, 608, duration=1)
     pyautogui.hotkey('ctrl', 'v')
 
-    pyautogui.click(904, 665, duration=1)
-    #sleep(1)
+    pyautogui.click(50,664, duration=1)
+    #sleep(1)  904, 665,
 
     product = row[4].value
     pyperclip.copy(product)
@@ -51,8 +51,8 @@ for row in sheet_vendas.iter_rows(min_row=2):
     pyautogui.click(875,605, duration=1)
     pyautogui.hotkey('ctrl', 'v')
 
-    pyautogui.click(904, 665, duration=1)
-    #sleep(1)
+    pyautogui.click(50,664, duration=1)
+    #sleep(1) 904, 665
 
     employee = row[8].value
     pyperclip.copy(employee)
@@ -74,14 +74,22 @@ for row in sheet_vendas.iter_rows(min_row=2):
     pyautogui.click(872,606, duration=1)
     pyautogui.hotkey('ctrl', 'v')
 
-    pyautogui.click(904, 665, duration=1)
+    pyautogui.click(50,664, duration=1)
 
-    pyautogui.click(904, 665, duration=1)
+    pyautogui.click(50,664, duration=1)
 
-    #print(f"Copied process: {process}")
+    #print(f"Copied process: {process}") 904, 665,
     #sleep(300)
-
 '''
+for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row):
+    if row[0].row == row_number:
+        for cell in row:
+            print(cell.value, end=" ")
+        print()
+
+for col in sheet.iter_rows(min_row=2):
+    print(col[1].value)
+
 company = row[0].value
 cnpj = row[1].value
 title = row[2].value
@@ -105,19 +113,7 @@ sheet = workbook.active
 row_number = 2
 
 # Iterar pelas linhas e imprimir a linha desejada
-for row in sheet.iter_rows(min_row=1, max_row=sheet.max_row):
-    if row[0].row == row_number:
-        for cell in row:
-            print(cell.value, end=" ")
-        print()
 
-
-
-
-
-
-for col in sheet.iter_rows(min_row=2):
-    print(col[1].value)
 
 
 # Imprimir os valores das células
