@@ -10,6 +10,14 @@ ws = wb.active
 # Lendo os dados no DataFrame
 df = pd.read_excel(file_path)
 
+# Criar uma cópia do DataFrame
+df = df.copy()
+
+# Verificar se a coluna 'Telefone' existe
+if 'Telefone' in df.columns:
+    # Remover a coluna 'Telefone'
+    df.drop('Telefone', axis=1, inplace=True)
+
 # Criando a coluna de telefones celulares
 df['Telefone'] = '55479'
 
@@ -18,8 +26,12 @@ for index in range(len(df)):
     random_number = ''.join(random.choice('0123456789') for i in range(8))
     df.loc[index, 'Telefone'] += random_number
 
-# Inserindo a coluna "Telefone" após a coluna "Empresa"
-df.insert(df.columns.get_loc("Empresa") + 1, "Telefone", df["Telefone"])
+# Encontrando a posição da coluna 'Empresa'
+empresa_position = df.columns.get_loc("Empresa")
+
+# Inserindo a coluna "Telefone" após a coluna "Empresa" (se a coluna não existir)
+if 'Telefone' not in df.columns:  # Verificação adicional
+    df.insert(empresa_position + 1, "Telefone", df["Telefone"])
 
 # Salvando o DataFrame modificado no arquivo Excel
 df.to_excel(file_path, index=False)
