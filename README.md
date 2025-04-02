@@ -2,4 +2,4 @@
 - Especialização Latu Sensu
 
 # Python 3 
-práticas de exercícios em andamento do curso
+práticas de exercícios do curso
