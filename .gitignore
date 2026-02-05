@@ -11,6 +11,7 @@ docker-init/
 
 # Arquivos de ambiente
 *.env
+*.venvpy/
 
 # Python bytecode
 __pycache__/
