@@ -3,10 +3,10 @@ from POO.functionMessages import title
 
 
 class Employee:
-    def __init__(self, n, ag): # Construtor
+    def __init__(self, name: str, age: int): # Construtor
         # Atributos
-     self.name = n
-     self.age = ag
+     self.name = name
+     self.age = age
 
 # Métodos
     def birthday(self):
@@ -24,21 +24,22 @@ class Employee:
         print(f'Recebi os valores {numbers} e são ao todo {size} numeros.')
 
 
-
-
 # Instanciando objeto de uma classe
-emp1 = Employee('Alessandra fischer', 20)
-emp1.birthday()
 title('Instância de objeto')
+emp1 = Employee('Alessandra fischer', 20)
 print(emp1.message())
+emp1.birthday()
 
 title('Realizando soma de 4 + 6')
-emp2 = Employee()
+emp2 = Employee('Roberto fischer', 24)
+print(emp2.message())
+emp2.birthday()
 result = emp2.sum(4, 6)
 print('O resultado é : ', result)
 
 title('Contatodor empacotando números')
-emp3 = Employee()
+emp3 = Employee('Vanessa Ortha', 22)
+print(emp3.message())
 emp3.counter(2, 3, 4)
 emp3.counter(6, 7, 8, 9, 10)
-emp3.counter(11, 12, 13, 14, 15, 16, 17, 18, 19, 20)
+emp3.counter(11, 12, 13, 14, 15, 16, 17, 18)
